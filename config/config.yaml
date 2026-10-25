@@ -1,0 +1,76 @@
+# BTCRFlow default configuration
+# Project-level analysisyaml overrides these defaults
+
+project_name: btcr_project
+species: Homo_sapiens
+Genome_Version: hg38
+client: demo
+
+raw_data_path:
+  - /data/project/00.raw_data
+
+sample_csv: config/samples.csv
+paired_csv: config/contrasts.csv
+workflow: /data/project/01.workflow
+data_deliver: /data/project/02.data_deliver
+
+reference_path: /data/reference/BTCRFlow_reference
+
+software:
+  seq_preprocessor: ../src/src/md5/Compile_release/seq_preprocessor_x86_64/release/seq_preprocessor
+  json_md5_verifier: ../src/src/md5/Compile_release/json_md5_verifier_x86_64/release/json_md5_verifier
+  mixcr: mixcr
+  vdjtools: vdjtools-1.2.1.jar
+  java: java
+  fastqc: fastqc
+  multiqc: multiqc
+  cutadapt: cutadapt
+  prepare_btcr_links: ../scripts/prepare_btcr_links.py
+  btcrflow_deliver: ../scripts/btcrflow_deliver.py
+
+raw_data:
+  md5: md5.txt
+  library_type: short-read
+  sample_sheet_rename: false
+
+convert_md5: link_dir
+r1_suffix: _R1.fq.gz
+r2_suffix: _R2.fq.gz
+
+# Module switches
+qc_clean: true
+trimming: true
+mixcr: true
+vdj_analysis: true
+deliver: true
+report: true
+
+# MiXCR parameters
+mixcr_params:
+  bcr_preset: takara-human-rna-bcr-umi-smarter
+  tcr_preset: generic-amplicon
+  species: hsa
+  rna: true
+  rigid_left_alignment_boundary: true
+  floating_right_alignment_boundary: C
+  threads: 12
+
+# VDJtools parameters
+vdjtools_params:
+  java_mem: 40g
+  diversity_resample_trials: 1
+  downsample_count: 1000000
+
+# Trimming parameters
+trimming_params:
+  hard_trim_5prime: 30
+  quality: "25,25"
+  error_rate: 0.1
+  min_length: 20
+  trim_n: true
+  fwd_adapter: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+  rev_adapter: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+
+# QC parameters
+qc_params:
+  fastqc_threads: 4

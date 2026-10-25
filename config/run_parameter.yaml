@@ -1,0 +1,25 @@
+# BTCRFlow run parameters
+# Controls module execution and resource allocation
+
+parameter:
+  threads: 12
+  mem_gb: 40
+
+  fastqc:
+    run: true
+    threads: 4
+
+  trimming:
+    run: true
+
+  mixcr:
+    run: true
+    postanalysis: true
+
+  vdjtools:
+    run: true
+    diversity: true
+    downsample: true
+
+  fastq_screen:
+    run: false

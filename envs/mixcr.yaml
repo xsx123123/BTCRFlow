@@ -1,0 +1,8 @@
+name: btcrflow_mixcr
+channels:
+  - conda-forge
+  - bioconda
+  - milaboratories
+  - defaults
+dependencies:
+  - mixcr=4.7.0

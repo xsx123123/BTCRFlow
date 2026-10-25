@@ -1,0 +1,7 @@
+name: btcrflow_trimming
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - cutadapt=4.9

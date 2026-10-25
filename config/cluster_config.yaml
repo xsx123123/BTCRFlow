@@ -1,0 +1,47 @@
+# BTCRFlow cluster configuration
+# Resource requests per rule for HPC submission
+
+__default__:
+  time: "04:00:00"
+  cpu: 4
+  mem: "16G"
+
+link_raw_data:
+  time: "01:00:00"
+  cpu: 1
+  mem: "4G"
+
+fastqc:
+  time: "02:00:00"
+  cpu: 4
+  mem: "8G"
+
+multiqc:
+  time: "01:00:00"
+  cpu: 2
+  mem: "8G"
+
+cutadapt_trim:
+  time: "04:00:00"
+  cpu: 8
+  mem: "16G"
+
+mixcr_analyze:
+  time: "12:00:00"
+  cpu: 12
+  mem: "40G"
+
+mixcr_postanalysis:
+  time: "04:00:00"
+  cpu: 4
+  mem: "40G"
+
+mixcr_downsample:
+  time: "02:00:00"
+  cpu: 4
+  mem: "16G"
+
+vdjtools_diversity:
+  time: "04:00:00"
+  cpu: 4
+  mem: "16G"

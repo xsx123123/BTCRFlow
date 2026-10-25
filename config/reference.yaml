@@ -1,0 +1,7 @@
+# BTCRFlow reference configuration
+# Paths resolved by resolve_reference_paths() with index_keys
+
+reference:
+  mixcr_species: hsa
+  vdjtools_jar: /path/to/vdjtools-1.2.1.jar
+  java_home: /path/to/jdk

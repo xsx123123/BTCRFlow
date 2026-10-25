@@ -1,0 +1,91 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+description: BTCRFlow configuration schema
+type: object
+required:
+  - project_name
+  - species
+  - Genome_Version
+  - sample_csv
+  - workflow
+properties:
+  project_name:
+    type: string
+  species:
+    type: string
+    enum: [Homo_sapiens, Mus_musculus]
+  Genome_Version:
+    type: string
+  client:
+    type: string
+  raw_data_path:
+    type: array
+    items:
+      type: string
+  sample_csv:
+    type: string
+  paired_csv:
+    type: string
+  workflow:
+    type: string
+  data_deliver:
+    type: string
+  reference_path:
+    type: string
+  software:
+    type: object
+    required:
+      - mixcr
+    properties:
+      mixcr:
+        type: string
+      vdjtools:
+        type: string
+      java:
+        type: string
+      fastqc:
+        type: string
+      multiqc:
+        type: string
+      cutadapt:
+        type: string
+  mixcr_params:
+    type: object
+    properties:
+      bcr_preset:
+        type: string
+      tcr_preset:
+        type: string
+      species:
+        type: string
+      threads:
+        type: integer
+  vdjtools_params:
+    type: object
+    properties:
+      java_mem:
+        type: string
+      diversity_resample_trials:
+        type: integer
+      downsample_count:
+        type: integer
+  trimming_params:
+    type: object
+    properties:
+      hard_trim_5prime:
+        type: integer
+      quality:
+        type: string
+      min_length:
+        type: integer
+  qc_clean:
+    type: boolean
+  trimming:
+    type: boolean
+  mixcr:
+    type: boolean
+  vdj_analysis:
+    type: boolean
+  deliver:
+    type: boolean
+  report:
+    type: boolean

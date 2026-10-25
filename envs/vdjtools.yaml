@@ -1,0 +1,8 @@
+name: btcrflow_vdjtools
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - openjdk=8
+  - vdjtools=1.2.1
